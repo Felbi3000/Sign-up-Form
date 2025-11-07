@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Norse';
+    src: url('assets/Norse-Bold.woff') format('woff2'),
+        url('assets/Norse-Bold.woff2') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    display: flex;
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#splash {
+    flex: 1;
+    background-image: url(assets/adam-bixby-Ix78f0AuCBI-unsplash.jpg);
+}
+#logo {
+
+    height: 10em;
+    font-family: 'Norse', system-ui;
+    color: white;
+    background-color: rgba(1, 1, 1, 0.55);
+    margin-top: 20em;
+
+}
+
+#logo img {
+    height: 120px;
+}
+
+#main {
+    flex: 2;
+}
