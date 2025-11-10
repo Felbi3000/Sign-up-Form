@@ -1,3 +1,52 @@
+/* CSS Reset */
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  max-width: 100%;
+}
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+
 @font-face {
     font-family: 'Norse';
     src: url('assets/Norse-Bold.woff') format('woff2'),
@@ -10,26 +59,114 @@
 body {
     display: flex;
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    height: 100vh;
+    max-width: 1200px;
+
+}
+
+a {
+  color: cadetblue;
+  text-decoration: none;
 }
 
 #splash {
     flex: 1;
     background-image: url(assets/adam-bixby-Ix78f0AuCBI-unsplash.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
 }
 #logo {
-
-    height: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;  
+    margin-top: 1em;
+    padding: 0.23em;
     font-family: 'Norse', system-ui;
+    font-size: 10rem;
     color: white;
     background-color: rgba(1, 1, 1, 0.55);
-    margin-top: 20em;
+    
 
 }
 
 #logo img {
-    height: 120px;
+    max-width: 12rem;
+    height: auto;
+}
+
+#credit, #credit a {
+  align-self: flex-end;
+  width: 100%;
+  padding: 20px 0 10px;
+  font-size: 0.9em;
+  color: white;
 }
 
 #main {
     flex: 2;
+    background-color: azure;
+}
+
+.info, .footer{
+    padding: 1.5em 1em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: cadetblue;
+  padding: 3em 1em;
+  box-shadow: 0px 7px 5px rgba(1, 1, 1, 0.55);
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form :focus {
+  outline: 0;
+  border-color: blue;
+}
+
+.form :invalid {
+  border-color: red;
+}
+
+.field {
+      flex: 1 1 calc(50% - 10px); /* each field takes 50% minus half the gap */
+    min-width: 200px; /* minimum width for smaller screens */
+}
+
+.field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: .5rem;
+}
+
+.field input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+
+button {
+  background-color: cadetblue;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
 }
